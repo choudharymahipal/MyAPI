@@ -23,5 +23,14 @@ class User {
       );
     });
   }
+
+  static async AllDeathRecords() {
+    return new Promise((resolve, reject) => {
+      db.query("SELECT * FROM Death_Registration", (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+  }
 }
 module.exports = User;
