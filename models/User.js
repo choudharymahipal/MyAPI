@@ -32,5 +32,46 @@ class User {
       });
     });
   }
+
+  // add new registration
+  static async deathRegistration(data) {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO Death_Registration (death_date,deceased_name,father_or_spouse_name,gender,age,place_of_death,cause_of_death,medical_facility_received,death_during_treatment,death_certified,disease_name,current_residence,permanent_residence,caste,nationality,occupation,female_death_condition,substance_type,substance_usage_duration,funeral_date_time,cremation_date_time,cremator_name,cremator_relation,informant_name,informant_relation, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [
+          data.death_date,
+          data.deceased_name,
+          data.father_or_spouse_name,
+          data.gender,
+          data.age,
+          data.place_of_death,
+          data.cause_of_death,
+          data.medical_facility_received,
+          data.death_during_treatment,
+          data.death_certified,
+          data.disease_name,
+          data.current_residence,
+          data.permanent_residence,
+          data.caste,
+          data.nationality,
+          data.occupation,
+          data.female_death_condition,
+          data.substance_type,
+          data.substance_usage_duration,
+          data.funeral_date_time,
+          data.cremation_date_time,
+          data.cremator_name,
+          data.cremator_relation,
+          data.informant_name,
+          data.informant_relation,
+          data.created_by,
+        ],
+        (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        }
+      );
+    });
+  }
 }
 module.exports = User;
