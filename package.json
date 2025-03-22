@@ -1,14 +1,14 @@
 {
   "name": "myapi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Mahipal Choudhary",
   "license": "ISC",
-  "description": "",
+  "description": "NodeJS API with JWT Authentication",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "body-parser": "^1.20.3",
