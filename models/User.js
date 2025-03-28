@@ -73,5 +73,15 @@ class User {
       );
     });
   }
+
+  // delete registration
+  static async deleteDeathRecordById(id) {
+    return new Promise((resolve, reject) => {
+      db.query("DELETE FROM Death_Registration WHERE id = ?", [id], (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+  }
 }
 module.exports = User;
